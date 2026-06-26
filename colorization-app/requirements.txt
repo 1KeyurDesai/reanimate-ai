@@ -1,0 +1,45 @@
+# ─── Core ─────────────────────────────────────────────────────────────────────
+flask>=3.0.0
+flask-cors>=4.0.0
+werkzeug>=3.0.0
+gunicorn>=21.2.0
+
+# ─── Computer Vision ──────────────────────────────────────────────────────────
+opencv-python==4.8.1.78
+opencv-contrib-python==4.8.1.78
+Pillow>=10.2.0
+numpy==1.23.5
+scipy==1.10.1
+scikit-image>=0.22.0
+
+# ─── Deep Learning ────────────────────────────────────────────────────────────
+torch==2.0.1
+torchvision==0.15.2
+# For GPU: pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+
+# ─── Real-ESRGAN ──────────────────────────────────────────────────────────────
+realesrgan>=0.3.0
+basicsr>=1.4.2
+
+# ─── SwinIR / HAT checkpoint runtime loader ──────────────────────────────────
+spandrel>=0.4.0
+spandrel-extra-arches>=0.2.0
+
+# ─── GFPGAN (optional) ────────────────────────────────────────────────────────
+gfpgan>=1.3.8
+facexlib>=0.3.0
+
+# ─── Utilities ────────────────────────────────────────────────────────────────
+tqdm>=4.66.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+lpips>=0.1.4
+mediapipe>=0.10.0
+imageio>=2.34.0
+imageio-ffmpeg>=0.4.9
+
+# ─── Optional: Colorization model comparison ───────────────────────────────────
+# DeOldify (Artistic/Stable)
+deoldify>=0.0.1
+# DDColor (ICCV 2023) via ModelScope pipeline
+modelscope>=1.14.0
