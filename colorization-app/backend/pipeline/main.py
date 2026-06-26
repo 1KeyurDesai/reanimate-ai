@@ -281,15 +281,20 @@ class PipelineController:
         total = sum(s["latency_s"] for s in steps)
         logger.info("Pipeline complete – total %.3fs", total)
 
-        metrics = compute_image_quality_metrics(input_path, final_path)
+        # -------------------------------------------------------------------------
+        # TEMPORARY FIX
+        # Disable image quality metrics to avoid OpenCV memory crash.
+        # -------------------------------------------------------------------------
 
+        metrics = {}
+
+        # Disable metrics for color comparison outputs
         for model_name, info in color_compare_outputs.items():
-            candidate_path = str(Path(output_dir) / info["filename"])
-            info["metrics"] = compute_image_quality_metrics(input_path, candidate_path)
+            info["metrics"] = {}
 
+        # Disable metrics for super-resolution comparison outputs
         for model_name, info in sr_compare_outputs.items():
-            candidate_path = str(Path(output_dir) / info["filename"])
-            info["metrics"] = compute_image_quality_metrics(input_path, candidate_path)
+            info["metrics"] = {}
 
         return {
             "final_filename":     final_filename,

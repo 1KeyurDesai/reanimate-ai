@@ -15,7 +15,7 @@ scikit-image>=0.22.0
 # ─── Deep Learning ────────────────────────────────────────────────────────────
 torch==2.0.1
 torchvision==0.15.2
-# For GPU: pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+# For GPU: pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
 
 # ─── Real-ESRGAN ──────────────────────────────────────────────────────────────
 realesrgan>=0.3.0
